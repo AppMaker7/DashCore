@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#100d20">
+  <meta name="description" content="DashCore — a free Geometry Dash practice companion.">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="styles.css">
+  <title>DashCore</title>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand"><div class="brand-mark">D</div><div><b>DASHCORE</b><small>ANDROID COMPANION</small></div></div>
+      <nav>
+        <button class="nav-item active" data-page="dashboard">◈ <span>Dashboard</span></button>
+        <button class="nav-item" data-page="mods">▦ <span>Mod library</span></button>
+        <button class="nav-item" data-page="profiles">◎ <span>Profiles</span></button>
+        <button class="nav-item" data-page="settings">⚙ <span>Settings</span></button>
+      </nav>
+      <div class="sidebar-bottom"><span class="status-dot"></span> Companion mode <small>v0.1.0</small></div>
+    </aside>
+    <main class="main">
+      <header class="topbar">
+        <div><div class="eyebrow">GEOMETRY DASH • ANDROID</div><h1 id="page-title">Dashboard</h1></div>
+        <div class="free-pill">FREE FOREVER</div>
+      </header>
+      <section class="page active" id="dashboard">
+        <div class="hero">
+          <div class="hero-copy">
+            <div class="eyebrow cyan">YOUR PRACTICE COMMAND CENTER</div>
+            <h2>Play your way.<br><span>Train smarter.</span></h2>
+            <p>Manage practice preferences and keep your setup organized in one place.</p>
+            <button class="primary-btn" data-go="mods">Explore modules <span>→</span></button>
+          </div>
+          <div class="orb-wrap"><div class="orb"><span>DC</span></div><div class="orb-ring"></div></div>
+        </div>
+        <div class="section-heading"><div><h3>Practice modules</h3><p>Companion settings — not injected into the game</p></div><span class="tag">2 MODULES</span></div>
+        <div class="module-grid">
+          <article class="module-card">
+            <div class="module-icon">◉</div><div class="module-top"><span class="tag purple">PRACTICE</span><span class="module-state">PLANNED</span></div>
+            <h3>Noclip</h3><p>Track your preference for collision-free practice. This toggle currently saves a profile setting only.</p>
+            <label class="switch-row"><span>Preference</span><input type="checkbox" id="noclip-toggle"><i></i></label>
+          </article>
+          <article class="module-card">
+            <div class="module-icon">↗</div><div class="module-top"><span class="tag cyan-tag">PRACTICE</span><span class="module-state">PLANNED</span></div>
+            <h3>Speed control</h3><p>Choose a target practice speed for your notes. It does not change Geometry Dash gameplay.</p>
+            <div class="speed-row"><strong id="speed-value">1.0×</strong><input id="speed-slider" type="range" min="0.5" max="2" step="0.1" value="1"></div>
+            <div class="range-labels"><span>0.5×</span><span>2.0×</span></div>
+          </article>
+        </div>
+        <div class="notice"><b>Compatibility status</b><span id="compat-summary">No game connection detected. DashCore is currently a standalone companion.</span><button data-go="settings">Details</button></div>
+      </section>
+      <section class="page" id="mods">
+        <div class="section-heading"><div><h3>Mod library</h3><p>Organize your practice setup</p></div><span class="tag">2 AVAILABLE</span></div>
+        <div class="library-list">
+          <article class="library-item"><div class="library-icon">◉</div><div class="library-info"><h3>Noclip preference</h3><p>Stores your selected practice preference in DashCore.</p></div><span class="tag purple">LOCAL SETTING</span></article>
+          <article class="library-item"><div class="library-icon">↗</div><div class="library-info"><h3>Speed preference</h3><p>Stores a target speed from 0.5× to 2.0× for your practice notes.</p></div><span class="tag cyan-tag">LOCAL SETTING</span></article>
+        </div>
+        <div class="notice warning"><b>Not an in-game mod loader</b><span>These modules do not alter, patch, or inject into the official Geometry Dash app.</span></div>
+      </section>
+      <section class="page" id="profiles">
+        <div class="section-heading"><div><h3>Practice profiles</h3><p>Save your preferred companion settings on this device</p></div></div>
+        <div class="profile-card">
+          <div><span class="tag cyan-tag">ACTIVE PROFILE</span><h3 id="profile-name">Main practice</h3><p id="profile-description">Your current local practice preferences.</p></div>
+          <button class="secondary-btn" id="save-profile">Save settings</button>
+        </div>
+        <div class="profile-card muted-card"><div><h3>What gets saved?</h3><p>Noclip preference, target speed, and profile name. Everything stays in this browser on this device.</p></div></div>
+      </section>
+      <section class="page" id="settings">
+        <div class="section-heading"><div><h3>Settings</h3><p>DashCore companion configuration</p></div></div>
+        <div class="settings-list">
+          <div class="setting"><div><b>Game integration</b><p>Standalone mode. No supported connection to Geometry Dash is configured.</p></div><span class="tag">NOT CONNECTED</span></div>
+          <div class="setting"><div><b>App version</b><p>DashCore 0.1.0 • PWA prototype</p></div></div>
+          <div class="setting"><div><b>Data</b><p>Settings are stored locally in this browser. No account required.</p></div><button class="secondary-btn" id="reset-settings">Reset settings</button></div>
+        </div>
+      </section>
+      <footer>DashCore is an independent fan-made companion and is not affiliated with RobTop Games.</footer>
+    </main>
+  </div>
+  <script src="core/compatibility.js"></script>
+  <script src="mods/noclip.js"></script>
+  <script src="mods/speedhack.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
