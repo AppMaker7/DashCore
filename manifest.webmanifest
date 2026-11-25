@@ -1,0 +1,9 @@
+{
+  "name": "DashCore",
+  "short_name": "DashCore",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#0b0914",
+  "theme_color": "#100d20",
+  "description": "Free Geometry Dash practice companion."
+}
